@@ -1,7 +1,7 @@
 # Tasks-php
 Spoj.com repository for tasks from Zabbix.
  
-PHP version: 7.3.5
+PHP version: 7.4.3
  
 #Done
 <ul>
