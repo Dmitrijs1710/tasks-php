@@ -32,9 +32,9 @@ for ($t = 0; $t < $testCount; $t++) {
     }
     if ($xCount >= 0 && $xCount < 3 && ($xCount == $oCount + 1 || $xCount == $oCount)) {
         fwrite($output, 'yes');
-    } else if ($xCount > 5 || $oCount > 4 || $oCount>$xCount) {
+    } else if ($xCount > 5 || $oCount > 4 || $oCount > $xCount) {
         fwrite($output, 'no');
-    } else if($xCount == $oCount + 1 || $xCount == $oCount){
+    } else if ($xCount == $oCount + 1 || $xCount == $oCount) {
         $combinationCount = 0;
         $combinationSymbol = [];
         foreach ($winCombination as $combination) {
@@ -64,11 +64,10 @@ for ($t = 0; $t < $testCount; $t++) {
             }
 
         }
-        if($combinationCount>0) {
-            if($combinationCount == 2 && $combinationSymbol[0] == $combinationSymbol[1]) {
+        if ($combinationCount > 0) {
+            if ($combinationCount == 2 && $combinationSymbol[0] == $combinationSymbol[1]) {
                 fwrite($output, 'yes');
-            } else if($combinationCount == 1 && (($combinationSymbol[0] == 'X' && $xCount > $oCount) || ($oCount == $xCount && $combinationSymbol[0] == 'O')))
-            {
+            } else if ($combinationCount == 1 && (($combinationSymbol[0] == 'X' && $xCount > $oCount) || ($oCount == $xCount && $combinationSymbol[0] == 'O'))) {
                 fwrite($output, 'yes');
             } else {
                 fwrite($output, 'no');
